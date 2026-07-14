@@ -6,7 +6,7 @@
 
   const body = document.body || {};
   const leadKey = String(body.getAttribute && body.getAttribute('data-lead-key') || '').trim();
-  if (!/^(phone|place|lead)-[a-z0-9-]{3,180}$/i.test(leadKey)) return;
+  if (!/^(phone|place|lead)-[a-z0-9_-]{3,180}$/i.test(leadKey)) return;
   const parts = window.location.pathname.split('/').filter(Boolean);
   const demoSlug = parts.length > 1 ? String(parts[parts.length - 2] || '').slice(0, 180) : '';
   const file = String(parts[parts.length - 1] || 'index.html').toLowerCase();
